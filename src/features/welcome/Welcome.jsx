@@ -1,14 +1,9 @@
-import './welcome.css';
+import style from './welcome.module.css';
 
 export const Welcome = ({handleActiveCanvas}) => {
     return (
-        <div className="welcome-container">
-            <div>
-                <button onClick={handleActiveCanvas} className="btn" type="button">
+                <button onClick={handleActiveCanvas} className={style.btn} type="button">
                     GO
                 </button>
-            </div>
-
-        </div>
     )
 }
