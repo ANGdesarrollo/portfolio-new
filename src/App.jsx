@@ -1,6 +1,8 @@
 import { Canvas } from "@react-three/fiber";
-import {Experience} from "./features/experience/Experience.jsx";
+import React, {Suspense} from "react";
 import './App.css';
+
+const Experience = React.lazy(() => import('./features/experience/Experience.jsx'));
 
 function App() {
     return (
@@ -11,10 +13,11 @@ function App() {
             }}>
                 {/* eslint-disable-next-line react/no-unknown-property */}
                 <color attach="background" args={["#ececec"]} />
-                <Experience />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Experience />
+                </Suspense>
             </Canvas>
         </>
     );
 }
-
 export default App;
