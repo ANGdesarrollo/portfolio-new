@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import './App.css'
 import { useGLTF } from "@react-three/drei";
+import {Experience} from "./features/experience/Experience.jsx";
+import {Canvas} from "@react-three/fiber";
 
 
 
@@ -9,7 +11,11 @@ function App() {
     return (
         <>
             <div>holaa</div>
-            {data && <div>chau</div>}
+            {data &&
+                <Canvas>
+                <Experience/>
+                </Canvas>
+            }
         </>
     )
 }
