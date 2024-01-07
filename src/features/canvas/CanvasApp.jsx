@@ -1,5 +1,6 @@
 import {Canvas} from "@react-three/fiber";
-export const CanvasApp = ({children}) => {
+import {Experience} from "../experience/Experience.jsx";
+export const CanvasApp = () => {
     return(
         <Canvas
             camera={{
@@ -7,7 +8,7 @@ export const CanvasApp = ({children}) => {
                 fov: 30,
             }}
           >
-            {children}
+            <Experience/>
         </Canvas>
     )
 }

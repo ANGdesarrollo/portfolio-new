@@ -1,24 +1,16 @@
-import React, {Suspense, useState} from 'react'
-import {Welcome} from "./features/welcome/Welcome.jsx";
+import React, {Suspense} from 'react'
 import {Navbar} from "./features/navbar/template/Navbar.jsx";
-import {useBoolean} from "./features/shared/hooks/useOpenCanvas.js";
 
-const CanvasApp = React.lazy(() => import("./features/canvas/CanvasApp.jsx").then(module => ({default: module.CanvasApp})))
-const Experience = React.lazy(() => import("./features/experience/Experience.jsx").then(module => ({default: module.Experience})))
+const CanvasApp = React.lazy(() => import("./features/canvas/CanvasApp.jsx").then(module => ({default: module.CanvasApp})));
 
 function App() {
-    const { boolean: isCanvasActive, handleBoolean: handleActiveCanvas } = useBoolean();
     return (
         <>
-            {isCanvasActive && <Navbar/>}
+            <Navbar/>
             <main>
-                {!isCanvasActive ? <Welcome handleActiveCanvas={handleActiveCanvas}/> :
-                    <Suspense fallback={<div>Loading bitch....</div>}>
-                        <CanvasApp>
-                            <Experience/>
-                        </CanvasApp>
-                    </Suspense>
-                }
+                <Suspense fallback={<div>Loading bitch....</div>}>
+                    <CanvasApp/>
+                </Suspense>
             </main>
         </>
     )
