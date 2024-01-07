@@ -5,15 +5,7 @@ export const Welcome = ({handleActiveCanvas}) => {
         <div className="welcome-container">
             <div>
                 <button onClick={handleActiveCanvas} className="btn" type="button">
-                    <strong>GO</strong>
-                    <div id="container-stars">
-                        <div id="stars"></div>
-                    </div>
-
-                    <div id="glow">
-                        <div className="circle"></div>
-                        <div className="circle"></div>
-                    </div>
+                    GO
                 </button>
             </div>
 
