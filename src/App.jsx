@@ -7,7 +7,8 @@ function App() {
     const [data, setData] = useState(false);
     return (
         <>
-            <div>hola</div>
+            <div>holaa</div>
+            <button onClick={() => setData(true)}>Click me to see canvas</button>
             {data &&
                 <Suspense>
                 <Canvas>
