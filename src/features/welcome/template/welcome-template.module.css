@@ -1,0 +1,5 @@
+.container {
+    @apply w-screen h-screen overflow-hidden relative;
+}
+
+

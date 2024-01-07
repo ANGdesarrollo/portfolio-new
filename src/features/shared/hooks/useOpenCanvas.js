@@ -1,10 +1,10 @@
-import {useState} from "react";
+import { useState } from 'react';
 
 export const useBoolean = () => {
-    const [boolean, setBoolean] = useState(false);
-    const handleBoolean = () => {
-        setBoolean(!boolean);
-    };
+  const [boolean, setBoolean] = useState(false);
+  const handleBoolean = () => {
+    setBoolean(!boolean);
+  };
 
-    return {boolean, handleBoolean};
-}
+  return { boolean, handleBoolean };
+};
