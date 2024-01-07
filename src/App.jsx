@@ -1,22 +1,21 @@
 import React, {Suspense, useState} from 'react'
-import './App.css'
 
-const Canvas = React.lazy(() => import("@react-three/fiber").then(module => ({ default: module.Canvas })));
+const CanvasApp = React.lazy(() => import("./features/canvas/CanvasApp.jsx").then(module => ({default: module.CanvasApp})))
 const Experience = React.lazy(() => import("./features/experience/Experience.jsx").then(module => ({default: module.Experience})))
 function App() {
     const [data, setData] = useState(false);
     return (
-        <>
-            <div>holaaa</div>
-            <button onClick={() => setData(true)}>Click me to see canvas</button>
-            {data &&
-                <Suspense fallback={<div>Loading bitch....</div>}>
-                <Canvas>
-                <Experience/>
-                </Canvas>
-                </Suspense>
-            }
-        </>
+            <main>
+                <div>holaaa</div>
+                <button onClick={() => setData(true)}>Click me to see canvas</button>
+                {data &&
+                    <Suspense fallback={<div>Loading bitch....</div>}>
+                        <CanvasApp>
+                            <Experience/>
+                        </CanvasApp>
+                    </Suspense>
+                }
+            </main>
     )
 }
 
