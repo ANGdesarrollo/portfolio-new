@@ -7,7 +7,7 @@ function App() {
     const [data, setData] = useState(false);
     return (
         <>
-            <div>holaaaa</div>
+            <div>hola</div>
             {data &&
                 <Suspense>
                 <Canvas>
