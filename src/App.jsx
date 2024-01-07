@@ -7,12 +7,12 @@ const CanvasApp = React.lazy(() => import("./features/canvas/CanvasApp.jsx").the
 const Experience = React.lazy(() => import("./features/experience/Experience.jsx").then(module => ({default: module.Experience})))
 
 function App() {
-    const { boolean: isCanvasActive, handleBoolean: activeCanvas } = useBoolean();
+    const { boolean: isCanvasActive, handleBoolean: handleActiveCanvas } = useBoolean();
     return (
         <>
             {isCanvasActive && <Navbar/>}
             <main>
-                {!isCanvasActive ? <Welcome/> :
+                {!isCanvasActive ? <Welcome handleActiveCanvas={handleActiveCanvas}/> :
                     <Suspense fallback={<div>Loading bitch....</div>}>
                         <CanvasApp>
                             <Experience/>
