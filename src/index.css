@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Advent Pro';
+  src: local('Advent Pro Regular'), local('AdventPro-Regular'),
+  url('/fonts/AdventPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   @apply m-0 p-0 box-border;
 }
