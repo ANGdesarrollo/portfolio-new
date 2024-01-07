@@ -23,7 +23,7 @@ export default {
             '2xl':'1536px'
         },
         colors: {
-
+            white: '#FFF'
         },
         fontFamily: {
             poppins:[ 'var(--font-poppins)']
