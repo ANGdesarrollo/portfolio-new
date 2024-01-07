@@ -1,3 +1,12 @@
+.container {
+    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2
+}
+
 .btn {
-    color: white;
+    @apply text-white font-extrabold text-4xl border w-56 py-2 transition-all rounded;
+    perspective: 1000px;
+}
+
+.btn:hover {
+    @apply scale-105
 }
