@@ -1,7 +1,8 @@
 .header {
-    @apply z-20 w-fit cursor-pointer flex justify-center;
+    @apply z-20 w-fit cursor-pointer flex justify-center fixed h-full;
     writing-mode: vertical-rl;
     transform: rotateZ(180deg);
+    background: transparent;
 }
 
 .header nav {

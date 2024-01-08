@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { navItems, sectionNames } from '../constants/data.js';
+import React from 'react';
+import { navItems } from '../constants/data.js';
 import style from './navbar.module.css';
-import { MyContext } from '../../../context/context.jsx';
+import { useSelectItem } from '../hooks/useSelectItem.js';
 
 export const Navbar = () => {
-  const { handlePageActive, pageActive } = useContext(MyContext);
+  const { handlePageActive, pageActive } = useSelectItem();
 
   return (
     <header className={style.header}>

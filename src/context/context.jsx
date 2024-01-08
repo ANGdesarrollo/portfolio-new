@@ -1,19 +1,40 @@
-import React, { useState } from 'react';
-import { navItems, sectionNames } from '../features/navbar/constants/data.js';
+import React, { useEffect, useState } from 'react';
+import { useFrame } from '@react-three/fiber';
 
-export const MyContext = React.createContext();
+export const MyContext = React.createContext(undefined);
 
 export const Provider = ({ children }) => {
-  const homeActive = navItems.find(({ item }) => item === sectionNames.home);
-  const [pageActive, setPageActive] = useState(homeActive);
+  const [meshGeometries, setMeshGeometries] = useState({
+    stars: null,
+    home: null,
+    aboutMe: null
+  });
 
-  const handlePageActive = (item) => {
-    console.log('entre');
-    setPageActive(item);
+  const handleSetMeshRef = (key, newValue) => {
+    setMeshGeometries(prev => ({ ...prev, [key]: newValue }));
   };
 
+  const handleRotationOfMeshs = (delta) => {
+    Object.keys(meshGeometries).forEach((key) => {
+      const geometry = meshGeometries[key];
+      if (geometry?.current) {
+        if (key === 'stars') {
+          geometry.current.rotation.y += delta * 0.015;
+        } else {
+          geometry.current.rotation.y += delta * 0.15;
+        }
+      }
+    });
+  };
+
+  useFrame((state, delta) => {
+    handleRotationOfMeshs(delta);
+  });
+
   return (
-    <MyContext.Provider value={{ pageActive, handlePageActive }}>
+    <MyContext.Provider value={{
+      handleSetMeshRef
+    }}>
       {children}
     </MyContext.Provider>
   );
