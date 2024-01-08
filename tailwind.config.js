@@ -23,10 +23,13 @@ export default {
       '2xl':'1536px'
     },
     colors: {
-      white: '#FFF'
+      'white': '#fdeff9',
+      'pink': '#ec38bc',
+      'violet': '#7303c0',
+      'dark-blue': '#03001e'
     },
     fontFamily: {
-      poppins:['var(--font-poppins)']
+      'advent-pro':['var(--advent-pro)']
     },
     extend: {}
 

@@ -1,0 +1,27 @@
+.header {
+    @apply z-20 w-fit cursor-pointer flex justify-center;
+    writing-mode: vertical-rl;
+    transform: rotateZ(180deg);
+}
+
+.header nav {
+    @apply h-full;
+}
+
+.header ul {
+    @apply flex w-full justify-around py-[15%] pr-[.5rem];
+}
+
+.header ul li {
+    @apply text-white py-2 text-[1rem] font-bold transition-all;
+}
+
+.liActive {
+    @apply translate-x-[-15px] line-through;
+}
+
+@screen md {
+    .header ul li {
+        @apply text-[1.2rem]
+    }
+}
