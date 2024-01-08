@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
+import {useCamera} from "@react-three/drei";
 
 export const MyContext = React.createContext(undefined);
 
@@ -27,8 +28,10 @@ export const Provider = ({ children }) => {
     });
   };
 
+
   useFrame((state, delta) => {
     handleRotationOfMeshs(delta);
+
   });
 
   return (

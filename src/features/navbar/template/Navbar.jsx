@@ -11,13 +11,13 @@ export const Navbar = () => {
       <nav>
         <ul>
           {
-            navItems.map(({ item }) =>
+            navItems.map((item) =>
               <li
-                className={item === pageActive ? style.liActive : ''}
-                key={item}
+                className={item.item === pageActive.item ? style.liActive : ''}
+                key={item.item}
                 onClick={() => handlePageActive(item)}
               >
-                {item}
+                {item.item}
               </li>
             )
           }
