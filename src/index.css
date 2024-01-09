@@ -8,6 +8,7 @@
   url('/fonts/AdventPro-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,30 +17,7 @@
   url('/fonts/AdventPro-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Advent Pro';
-  src: local('Advent Pro SemiBold'), local('AdventPro-SemiBold'),
-  url('/fonts/AdventPro-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Advent Pro';
-  src: local('Advent Pro Thin'), local('AdventPro-Thin'),
-  url('/fonts/AdventPro-Thin.woff') format('woff');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Advent Pro';
-  src: local('Advent Pro Medium'), local('AdventPro-Medium'),
-  url('/fonts/AdventPro-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -51,7 +29,7 @@
 }
 
 #root {
-  @apply flex font-advent-pro;
+  @apply flex font-advent-pro h-screen;
   background: var(--dark-blue); /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, var(--white), var(--pink), var(--violet), var(--dark-blue)); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, var(--white), var(--pink), var(--violet), var(--dark-blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -59,10 +37,6 @@
 
 body {
   @apply m-0 p-0 box-border;
-}
-
-main {
-  @apply min-h-screen;
 }
 
 canvas {
