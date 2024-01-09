@@ -6,20 +6,16 @@ const Provider = React.lazy(() => import('../../context/context.jsx').then(modul
 
 export const CanvasApp = () => {
   return (
-    <Suspense fallback={<div>loading</div>}>
+    <Suspense fallback={<div>loading...</div>}>
       <Canvas
         camera={{
           position: [0, 0, 1]
         }}
       >
-        <Suspense fallback={<div>loading</div>}>
-          <Provider>
-            <Suspense fallback={<div>loading</div>}>
-              <StarsGeometry/>
-            </Suspense>
-            <HomeTemplate/>
-          </Provider>
-        </Suspense>
+        <Provider>
+          <StarsGeometry/>
+          <HomeTemplate/>
+        </Provider>
       </Canvas>
     </Suspense>
   );
