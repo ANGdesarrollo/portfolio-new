@@ -11,9 +11,5 @@ export const StarsGeometry = () => {
     handleSetMeshRef('stars', ref);
   }, [ref]);
 
-  return (
-    <mesh ref={ref}>
-      <Stars count={20000} fade={true} radius={100} depth={-500} factor={2} />
-    </mesh>
-  );
+  return <Stars ref={ref} count={20000} fade={true} radius={100}  factor={4} />
 };
