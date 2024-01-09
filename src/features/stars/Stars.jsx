@@ -13,7 +13,7 @@ export const StarsGeometry = () => {
 
   return (
     <mesh ref={ref}>
-      <Stars count={50000} fade={true} radius={200} depth={-500} factor={2} />
+      <Stars count={20000} fade={true} radius={100} depth={-500} factor={2} />
     </mesh>
   );
 };
