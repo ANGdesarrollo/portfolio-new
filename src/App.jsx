@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Navbar } from './features/navbar/template/Navbar.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import { CanvasApp } from './features/canvas/CanvasApp.jsx';
+
+
+const CanvasApp = React.lazy(() => import('./features/canvas/CanvasApp.jsx').then(module => ({ default: module.CanvasApp })));
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Navbar/>
-        <CanvasApp/>
+        <Suspense fallback={<div>Loading bitch....</div>}>
+          <CanvasApp/>
+        </Suspense>
       </BrowserRouter>
     </>
   );
