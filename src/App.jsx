@@ -12,12 +12,14 @@ function App() {
   return (
     <>
       {isCanvasActive ? <WelcomeTemplate handleActiveCanvas={handleActiveCanvas}/> :
-        <Suspense fallback={<div>Loading bitch....</div>}>
+        <>
           <BrowserRouter>
             <Navbar/>
-            <CanvasApp/>
+            <Suspense fallback={<div>Loading bitch....</div>}>
+              <CanvasApp/>
+            </Suspense>
           </BrowserRouter>
-        </Suspense>
+        </>
       }
     </>
   );
