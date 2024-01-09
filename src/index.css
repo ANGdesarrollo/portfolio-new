@@ -20,6 +20,33 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Advent Pro';
+  src: local('Advent Pro SemiBold'), local('AdventPro-SemiBold'),
+  url('/fonts/AdventPro-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Advent Pro';
+  src: local('Advent Pro Thin'), local('AdventPro-Thin'),
+  url('/fonts/AdventPro-Thin.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Advent Pro';
+  src: local('Advent Pro Medium'), local('AdventPro-Medium'),
+  url('/fonts/AdventPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --white: #fdeff9;
   --pink: #ec38bc;
