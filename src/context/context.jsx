@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {useFrame, useThree} from '@react-three/fiber';
-import {useCamera} from "@react-three/drei";
-import {useMoveCamera} from "../features/shared/hooks/useMoveCamera.js";
+import { useFrame, useThree } from '@react-three/fiber';
+import { useCamera } from '@react-three/drei';
+import { useMoveCamera } from '../features/shared/hooks/useMoveCamera.js';
 
 export const MyContext = React.createContext(undefined);
 
@@ -35,7 +35,6 @@ export const Provider = ({ children }) => {
 
   useFrame((state, delta) => {
     handleRotationOfMeshes(delta);
-
   });
 
   return (

@@ -5,7 +5,6 @@ import { Provider } from '../../context/context.jsx';
 import { StarsGeometry } from '../stars/Stars.jsx';
 
 export const CanvasApp = () => {
-
   return (
     <Canvas
       camera={{
