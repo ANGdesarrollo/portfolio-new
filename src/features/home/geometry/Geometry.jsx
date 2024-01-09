@@ -10,7 +10,7 @@ export const Geometry = () => {
   }, [ref]);
 
   return (
-    <mesh ref={ref}>
+    <mesh ref={ref} scale={[0.25, 0.25, 0.25]}>
       <octahedronGeometry />
       <meshNormalMaterial />
     </mesh>

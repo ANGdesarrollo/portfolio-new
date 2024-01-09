@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useFrame } from '@react-three/fiber';
+import {useFrame, useThree} from '@react-three/fiber';
 import {useCamera} from "@react-three/drei";
+import {useMoveCamera} from "../features/shared/hooks/useMoveCamera.js";
 
 export const MyContext = React.createContext(undefined);
 
@@ -11,11 +12,15 @@ export const Provider = ({ children }) => {
     aboutMe: null
   });
 
+  const { camera } = useThree();
+  useMoveCamera(camera, meshGeometries);
+
+
   const handleSetMeshRef = (key, newValue) => {
     setMeshGeometries(prev => ({ ...prev, [key]: newValue }));
   };
 
-  const handleRotationOfMeshs = (delta) => {
+  const handleRotationOfMeshes = (delta) => {
     Object.keys(meshGeometries).forEach((key) => {
       const geometry = meshGeometries[key];
       if (geometry?.current) {
@@ -28,9 +33,8 @@ export const Provider = ({ children }) => {
     });
   };
 
-
   useFrame((state, delta) => {
-    handleRotationOfMeshs(delta);
+    handleRotationOfMeshes(delta);
 
   });
 
