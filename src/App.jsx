@@ -11,7 +11,7 @@ function App() {
   const { boolean: isCanvasActive, handleBoolean: handleActiveCanvas } = useBoolean();
   return (
     <>
-      {!isCanvasActive ? <WelcomeTemplate handleActiveCanvas={handleActiveCanvas}/> :
+      {isCanvasActive ? <WelcomeTemplate handleActiveCanvas={handleActiveCanvas}/> :
         <Suspense fallback={<div>Loading bitch....</div>}>
           <BrowserRouter>
             <Navbar/>

@@ -8,12 +8,12 @@ export const CanvasApp = () => {
   return (
     <Canvas
       camera={{
-        position: [0, 0, 5]
+        position: [0, 0, 1]
       }}
     >
       <Provider>
-        <StarsGeometry/>
-        <HomeTemplate/>
+        {/*<StarsGeometry/>*/}
+        {/*<HomeTemplate/>*/}
       </Provider>
 
     </Canvas>
