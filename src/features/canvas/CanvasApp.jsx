@@ -12,7 +12,7 @@ export const CanvasApp = () => {
       }}
     >
       <Provider>
-        {/*<StarsGeometry/>*/}
+        <StarsGeometry/>
         {/*<HomeTemplate/>*/}
       </Provider>
 
