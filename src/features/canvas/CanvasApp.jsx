@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 const Canvas = React.lazy(() => import('@react-three/fiber').then(module => ({ default: module.Canvas })));
 const StarsGeometry = React.lazy(() => import('../stars/Stars.jsx').then(module => ({ default: module.StarsGeometry })));
 const HomeTemplate = React.lazy(() => import('../home/template/HomeTemplate.jsx').then(module => ({ default: module.HomeTemplate })));
@@ -12,8 +12,10 @@ export const CanvasApp = () => {
       }}
     >
       <Provider>
+          <Suspense>
         <StarsGeometry/>
         <HomeTemplate/>
+          </Suspense>
       </Provider>
     </Canvas>
   );
