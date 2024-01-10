@@ -1,20 +1,20 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useCamera } from '@react-three/drei';
 import { useMoveCamera } from '../features/shared/hooks/useMoveCamera.js';
 
-export const MyContext = React.createContext(undefined);
+export const MyContext = React.createContext(null);
 
 export const Provider = ({ children }) => {
   const [meshGeometries, setMeshGeometries] = useState({
     stars: null,
     home: null,
-    aboutMe: null
+    aboutMe: null,
+    experience: null,
+    contact: null
   });
 
   const { camera } = useThree();
   useMoveCamera(camera, meshGeometries);
-
 
   const handleSetMeshRef = (key, newValue) => {
     setMeshGeometries(prev => ({ ...prev, [key]: newValue }));
