@@ -8,8 +8,8 @@ export const StarsGeometry = () => {
   const { handleSetMeshRef } = useContext(MyContext);
   const ref = useRef(null);
   const { isMobile } = useDetectDevice();
-  const countStars = isMobile() ? 5000 : 20000;
-  const radius = isMobile() ? 25 : 100;
+  const countStars = isMobile() ? 1000 : 20000;
+  const radius = isMobile() ? 10 : 100;
 
   useEffect(() => {
     handleSetMeshRef('stars', ref);
