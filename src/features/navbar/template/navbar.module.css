@@ -14,7 +14,7 @@
 }
 
 .header ul li {
-    @apply text-white py-2 text-[1rem] font-bold transition-all;
+    @apply text-white py-2 text-[1rem] font-bold transition-all uppercase;
 }
 
 .liActive {
