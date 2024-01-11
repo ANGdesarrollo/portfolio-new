@@ -1,8 +1,8 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { sectionNames } from '../../navbar/constants/data.js';
 import { gsap } from 'gsap';
 import { useSetPosition } from './useSetPosition.js';
+import { sectionNames } from '../constants/sectionNames.js';
 export const useMoveCamera = (camera, meshGeometries) => {
   const { search } = useLocation();
   const params = new URLSearchParams(search);
