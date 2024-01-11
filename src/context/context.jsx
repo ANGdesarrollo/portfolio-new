@@ -24,7 +24,7 @@ export const Provider = ({ children }) => {
     Object.keys(meshGeometries).forEach((key) => {
       const geometry = meshGeometries[key];
       if (geometry?.current) {
-        geometry.current.rotation.y += delta * (key === 'stars' ? 0.015 : 0.15);
+        geometry.current.rotation.y += delta * (key === 'stars' ? -0.015 : 0.15);
       }
     });
   }, [meshGeometries]);

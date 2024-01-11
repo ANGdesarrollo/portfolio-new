@@ -3,37 +3,37 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useSetPosition } from './useSetPosition.js';
 import { sectionNames } from '../constants/sectionNames.js';
+import { useGsap } from './useGsap.js';
 export const useMoveCamera = (camera, meshGeometries) => {
   const { search } = useLocation();
+  const { gsapFromTo } = useGsap();
+  const { setPosition } = useSetPosition();
+
   const params = new URLSearchParams(search);
   const page = params.get('page');
 
-  const isHome = page === sectionNames.home.toLowerCase();
-  const isAboutMe = page === sectionNames.aboutMe.toLowerCase();
-  const isStack = page === sectionNames.stack.toLowerCase();
-  const isProjects = page === sectionNames.projects.toLowerCase();
-  const isContact = page === sectionNames.contact.toLowerCase();
+  const pagePositions = {
+    [sectionNames.home.toLowerCase()]: setPosition(0, 0, 1),
+    [sectionNames.aboutMe.toLowerCase()]: setPosition(-4, 0, 1)
+  };
 
-  const { setPosition } = useSetPosition();
+  const animatePageChange = () => {
+    const currentPosition = setPosition(camera.position.x, camera.position.y, camera.position.z);
+    const targetPosition = pagePositions[page];
 
-  const moveCamera = (camera, position) => {
-    gsapFromTo(camera, position);
+    if (targetPosition) {
+      gsapFromTo({
+        target: camera.position,
+        fromVars: currentPosition,
+        toVars: targetPosition,
+        durationInSeconds: 3
+      });
+    }
   };
 
   useEffect(() => {
-    if (isHome) {
-      moveCamera(camera, setPosition(0, 0, 1));
-    } else if (isAboutMe) {
-      moveCamera(camera, setPosition(-4, 0, 1));
-    }
+    animatePageChange();
   }, [page]);
 };
 
-const gsapFromTo = (camera, position) => {
-  gsap.fromTo(camera.position, { x: camera.position.x, y: camera.position.y, z: camera.position.z }, {
-    x: position.x,
-    y: position.y,
-    z: position.z,
-    duration: 3
-  });
-};
+

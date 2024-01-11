@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { navItems, sectionNames } from '../constants/data';
+import { navItems } from '../constants/data';
 import { useSearchParams } from 'react-router-dom';
+import {sectionNames} from "../../shared/constants/sectionNames.js";
 export const useSelectItem = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const homeActive = navItems.find(({ item }) => item === sectionNames.home);
