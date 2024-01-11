@@ -1,7 +1,7 @@
 export const sectionNames = {
-  contact: 'CONTACT',
-  experience: 'EXPERIENCE',
-  stack: 'STACK',
-  aboutMe: 'ABOUT ME',
-  home: 'HOME'
+  contact: 'contact',
+  experience: 'experience',
+  stack: 'stack',
+  aboutMe: 'about me',
+  home: 'home'
 };

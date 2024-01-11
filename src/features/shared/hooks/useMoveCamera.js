@@ -3,20 +3,22 @@ import { useEffect } from 'react';
 import { useSetPosition } from './useSetPosition.js';
 import { sectionNames } from '../constants/sectionNames.js';
 import { useGsap } from './useGsap.js';
+import {geometriesPositions} from "../constants/geometriesPositions.js";
 export const useMoveCamera = (camera, meshGeometries) => {
   const { search } = useLocation();
   const { gsapFromTo } = useGsap();
   const { setPosition } = useSetPosition();
+  const { aboutMe, home, contact, experience, stack } = geometriesPositions;
 
   const params = new URLSearchParams(search);
   const page = params.get('page');
 
   const pagePositions = {
-    [sectionNames.home.toLowerCase()]: setPosition(0, 0, 1),
-    [sectionNames.aboutMe.toLowerCase()]: setPosition(-4, 0, 1),
-    [sectionNames.stack.toLowerCase()]: setPosition(0, 3, 0 ),
-    [sectionNames.experience.toLowerCase()]: setPosition(-4, 0, -4 ),
-    [sectionNames.contact.toLowerCase()]: setPosition(-2, -2, -2 )
+    [sectionNames.home]: home,
+    [sectionNames.aboutMe]: aboutMe,
+    [sectionNames.stack]: contact,
+    [sectionNames.experience]: experience,
+    [sectionNames.contact]: stack
   };
 
   const animatePageChange = () => {

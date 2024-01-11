@@ -2,12 +2,12 @@ import React from 'react';
 import { Stars } from '@react-three/drei';
 import { useContext, useEffect, useRef } from 'react';
 import { MyContext } from '../../context/context.jsx';
-import { useDetectDevice } from '../shared/hooks/useDetectDevice.js';
+import { useIsMobile } from '../shared/hooks/useIsMobile.js';
 
 export const StarsGeometry = () => {
   const { handleSetMeshRef } = useContext(MyContext);
   const ref = useRef(null);
-  const { isMobile } = useDetectDevice();
+  const { isMobile } = useIsMobile();
   const countStars = isMobile() ? 1000 : 20000;
   const radius = isMobile() ? 10 : 100;
 

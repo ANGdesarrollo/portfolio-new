@@ -1,6 +1,6 @@
 const MOBILE_DEVICES = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone'];
 
-export const useDetectDevice = () => {
+export const useIsMobile = () => {
   const device = navigator.userAgent;
 
   const isMobile = () => {

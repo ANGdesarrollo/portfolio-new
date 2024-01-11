@@ -19,6 +19,11 @@ module.exports = {
         "*.rs",
         "*.toml"
     ],
+    "settings": {
+        "react": {
+            "version": "18.2.0" // Añadir esto
+        }
+    },
     "rules": {
         "tailwindcss/no-contradicting-classname": "error",
         "react-hooks/rules-of-hooks": "off",
