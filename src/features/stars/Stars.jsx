@@ -1,8 +1,9 @@
 import React from 'react';
-import { Stars } from '@react-three/drei';
 import { useContext, useEffect, useRef } from 'react';
 import { MyContext } from '../../context/context.jsx';
 import { useIsMobile } from '../shared/hooks/useIsMobile.js';
+
+const Stars = React.lazy(() => import('@react-three/drei').then(module => ({ default: module.Stars })));
 
 export const StarsGeometry = () => {
   const { handleSetMeshRef } = useContext(MyContext);
