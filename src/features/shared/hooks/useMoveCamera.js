@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import { gsap } from 'gsap';
 import { useSetPosition } from './useSetPosition.js';
 import { sectionNames } from '../constants/sectionNames.js';
 import { useGsap } from './useGsap.js';
@@ -14,7 +13,10 @@ export const useMoveCamera = (camera, meshGeometries) => {
 
   const pagePositions = {
     [sectionNames.home.toLowerCase()]: setPosition(0, 0, 1),
-    [sectionNames.aboutMe.toLowerCase()]: setPosition(-4, 0, 1)
+    [sectionNames.aboutMe.toLowerCase()]: setPosition(-4, 0, 1),
+    [sectionNames.stack.toLowerCase()]: setPosition(0, 3, 0 ),
+    [sectionNames.experience.toLowerCase()]: setPosition(-4, 0, -4 ),
+    [sectionNames.contact.toLowerCase()]: setPosition(-2, -2, -2 )
   };
 
   const animatePageChange = () => {

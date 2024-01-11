@@ -1,6 +1,6 @@
 export const sectionNames = {
   contact: 'CONTACT',
-  projects: 'PROJECTS',
+  experience: 'EXPERIENCE',
   stack: 'STACK',
   aboutMe: 'ABOUT ME',
   home: 'HOME'

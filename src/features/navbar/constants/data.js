@@ -6,7 +6,7 @@ export const navItems = [
     item: sectionNames.contact
   },
   {
-    item: sectionNames.projects
+    item: sectionNames.experience
   },
   {
     item: sectionNames.stack
